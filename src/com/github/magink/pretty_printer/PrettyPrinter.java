@@ -9,19 +9,9 @@ import com.github.magink.parser.Sentences;
 import com.github.magink.parser.Statement;
 
 public class PrettyPrinter {
-  public final String RED = "\u001B[31m";
-  public final String GREEN = "\u001B[32m";
-  public final String CYAN = "\u001B[36m";
-  public final String RESET = "\u001B[0m";
 
-  public  final String BLACK_BOLD = "\033[1;30m";  // BLACK
-  // Declaring ANSI_RESET so that we can reset the color
-  public  final String ANSI_RESET = "\u001B[0m";
-  // Declaring the background color
-  public  final String ANSI_RED_BACKGROUND
-      = "\u001B[41m";
+  Parser parser;
 
-  Parser parser;;
   public PrettyPrinter(Parser parser) {
     this.parser = parser;
   }
@@ -42,16 +32,15 @@ public class PrettyPrinter {
     }
   }
   private void printQuestion(String toPrint) {
-    printConsole(RED + toPrint + RESET);
-    // String format = "%lineIndex"
+    printConsole(Colors.RED_UNDERLINED + toPrint);
   }
   private void printStatement(String toPrint) {
-    printConsole(GREEN + toPrint + RESET);
+    printConsole(Colors.GREEN + toPrint);
   }
   private void printExclamation(String toPrint) {
-    printConsole(CYAN + toPrint + RESET);
+    printConsole(Colors.CYAN_BOLD + toPrint);
   }
   private void printConsole(String print) {
-    System.out.println(print + RESET);
+    System.out.println(print + Colors.RESET);
   }
 }
