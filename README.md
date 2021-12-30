@@ -4,6 +4,7 @@ A very simple java app that prettifies output from a parser. Types of sentences 
 
 ## How to use
 
+Add the parser library to the project using your build tools.
 First give the tokenizer adapter (bundled in the parser jar) the string to tokenize, or create your own adapter against the TokenReceiver interface. For information can be found in the [parser project](https://github.com/magink/parser/blob/main/README.md)
 
 - `String toTokenize = "I want to parse this string. Are you sure? YES I AM! ";`
